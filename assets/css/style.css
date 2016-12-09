@@ -26,6 +26,7 @@ body {
 	display: inline-block;
   	height: 145px;
 	padding: 0px 20px 0px 20px;
+	margin: 0px 2px 0px 2px;
 	background-color: white;
 	border: solid;
 	border-color: green;
@@ -33,7 +34,7 @@ body {
 
 .character-image p {
 	text-align: center;
-	margin: 0px 0px 0px 0px;
+	margin: 0px 2px 0px 2px;
 }
 
 #chosen-character {
@@ -46,6 +47,7 @@ body {
 }
 
 .chosen-character {
+	border-color: #dd48f0;
 	background-color: #5bf048;
 }
 
@@ -55,7 +57,7 @@ body {
 }
 
 .enemy-character {
-	border-color: red;
+	border-color: #48f0dd;
 	background-color: #f0485b;
 	margin: 0px 2px 0px 2px;
 }
@@ -63,4 +65,18 @@ body {
 #fight-section h2 {
 	font-size: 2em;
     color: #f0485b;
+}
+
+#defender-section {
+	height: 210px;
+}
+
+#defender-section h2 {
+	font-size: 2em;
+    color: #f0485b;
+}
+
+.defender-character {
+	border-color: #485bf0;
+	background-color: #f0dd48;
 }
