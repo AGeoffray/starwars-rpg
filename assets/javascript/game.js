@@ -74,6 +74,12 @@ function moveToEnemies() {
 
 // This function will reset the state of the game
 function resetGame() {
+  // Reset all the health values to the original
+  $("#obi-wan-kenobi-character").children(".health").html(obiWanKenobi.health);
+  $("#luke-skywalker-character").children(".health").html(lukeSkywalker.health);
+  $("#darth-sidious-character").children(".health").html(darthSidious.health);
+  $("#darth-maul-character").children(".health").html(darthMaul.health);
+
   $(".character-image").removeClass("chosen-character enemy-character defender-character").addClass("available-character");
   var available = $(".available-character").show();
   $("#characters-available").html(available);
@@ -241,13 +247,17 @@ $(document).ready(function() {
     if (characterSelected && defenderSelected && !gameOver) {
       // User attacks the defender and decreases the defender's health points
       defender.health = defender.health - character.attack;
+      $(".defender-character").children(".health").html(defender.health);
       $("#game-message").html("<p>You attacked " + defender.name + " for " + character.attack + " damage.<p>");
+
       // User's attack power increases
       character.attack = character.attack + character.baseAttack;
 
       // If defender is still alive, they counter attack the user
       if (defender.health > 0) {
         character.health = character.health - defender.baseAttack;
+        $(".chosen-character").children(".health").html(character.health);
+
         // Check if the user survives the attack
         if (character.health > 0) {
           $("#game-message").append("<p>" + defender.name + " attacked you back for " + defender.baseAttack + " damage.</p>");
